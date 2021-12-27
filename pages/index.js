@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
 
-export default function Home() {
+export default function Home(props) {
   useEffect(() => {
-    console.log(process.env.API_KEY);
+    console.log(props.apiKey);
   }, []); 
   return (
     <div className="container">
@@ -213,9 +213,9 @@ export default function Home() {
 }
 
 export const getServerSideProps = async () => {
-  console.log(process.env.API_KEY);
-
   return {
-    props: {},
+    props: {
+      apiKey: process.env.API_KEY
+    },
   }
 }
