@@ -211,3 +211,11 @@ export default function Home() {
     </div>
   )
 }
+
+export const getServerSideProps = async () => {
+  console.log(process.env.API_KEY);
+
+  return {
+    props: {},
+  }
+}
